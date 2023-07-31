@@ -2,20 +2,16 @@
 
 <!-- cargo-sync-readme start -->
 
-Tired of your log lines and progress bars mixing up? indicatif_log_bridge to the rescue!
+Tired of your log lines and progress bars mixing up? indicatif\_log\_bridge to the rescue!
 
-Simply wrap your favourite logging implementation in [crate::LogWrapper]
+Simply wrap your favourite logging implementation in [LogWrapper](https://docs.rs/indicatif-log-bridge/*/indicatif-log-bridge/struct.LogWrapper.html)
     and those worries are a thing of the past.
 
-Just remember to only use progress bars added to the [MultiProgress] you used
+Just remember to only use progress bars added to the [MultiProgress](https://docs.rs/indicatif/*/indicatif/struct.MultiProgress.html) you used
     , otherwise you are back to ghostly halves of progress bars everywhere.
 
 # Example
 ```rust
-    # use indicatif_log_bridge::LogWrapper;
-    # use log::info;
-    # use indicatif::{MultiProgress, ProgressBar};
-    # use std::time::Duration;
     let logger =
         env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info"))
             .build();

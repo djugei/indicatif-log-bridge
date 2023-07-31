@@ -1,6 +1,6 @@
 //! Tired of your log lines and progress bars mixing up? indicatif_log_bridge to the rescue!
 //!
-//! Simply wrap your favourite logging implementation in [crate::LogWrapper]
+//! Simply wrap your favourite logging implementation in [LogWrapper]
 //!     and those worries are a thing of the past.
 //!
 //! Just remember to only use progress bars added to the [MultiProgress] you used
