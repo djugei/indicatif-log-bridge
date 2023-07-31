@@ -1,12 +1,20 @@
 [package]
 name = "indicatif-log-bridge"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Bridge the log crate and indicatif to stop log lines from mixing up with progress bars"
 license = "MIT"
+author = "djugei"
+repository = "https://github.com/djugei/indicatif-log-bridge"
+keywords = ["cli", "progress", "progressbar", "logging", "log"]
+categories = ["command-line-interface", "concurrency", "async", "rust-patterns"]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 indicatif = ">=0.17.5"
 log = { version = ">=0.4.19", features = ["std"] }
+
+[dev-dependencies]
+env_logger = "*"
