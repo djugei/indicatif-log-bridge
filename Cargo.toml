@@ -1,0 +1,12 @@
+[package]
+name = "indicatif-log-bridge"
+version = "0.1.0"
+edition = "2021"
+description = "Bridge the log crate and indicatif to stop log lines from mixing up with progress bars"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+indicatif = ">=0.17.5"
+log = { version = ">=0.4.19", features = ["std"] }
