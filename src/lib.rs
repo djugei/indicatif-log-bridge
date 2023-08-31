@@ -85,7 +85,10 @@ impl<L: Log> Log for LogWrapper<L> {
     }
 
     fn log(&self, record: &log::Record) {
-        self.bar.suspend(|| self.log.log(record))
+        // do an early check for enabled to not cause unnescesary suspends
+        if self.log.enabled(record.metadata()) {
+            self.bar.suspend(|| self.log.log(record))
+        }
     }
 
     fn flush(&self) {
