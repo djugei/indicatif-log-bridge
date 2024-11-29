@@ -12,6 +12,13 @@ Just remember add each [ProgressBar](indicatif::ProgressBar) to the [MultiProgre
 
 ## Example
 ```rust
+use env_logger;
+use indicatif::{MultiProgress, ProgressBar};
+use indicatif_log_bridge::LogWrapper;
+use log::info;
+use std::time::Duration;
+
+fn main() {
     let logger =
         env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info"))
             .build();
@@ -25,12 +32,13 @@ Just remember add each [ProgressBar](indicatif::ProgressBar) to the [MultiProgre
 
     let pg = multi.add(ProgressBar::new(10));
     for i in (0..10) {
-        std::thread::sleep(Duration::from_micros(100));
+        std::thread::sleep(Duration::from_secs(1));
         info!("iteration {}", i);
         pg.inc(1);
     }
     pg.finish();
     multi.remove(&pg);
+}
 ```
 The code of this crate is pretty simple, so feel free to check it out.
 
